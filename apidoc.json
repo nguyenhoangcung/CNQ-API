@@ -1,0 +1,7 @@
+{
+  "name": "cnq-user",
+  "version": "1.0.0",
+  "description": "CNQ docs user",
+  "title": "CNQ docs user",
+  "url" : "http://localhost:1234/api/v1/user"
+}
