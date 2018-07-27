@@ -1,13 +1,13 @@
 'use strict';
 
 module.exports = asyncWrap(async (req, res, next) => {
-    req.body.passhash = req.body && req.body.passhash;
+    req.body.client_id = req.body && req.body.client_id;
 
-    req.checkBody('passhash', req.__('password_is_required')).notEmpty();
-    req.checkBody('passhash', req.__('password_min_6_chars')).isLength({
+    req.checkBody('client_id', req.__('client_id_is_required')).notEmpty();
+    req.checkBody('client_id', req.__('client_id_min_1_chars')).isLength({
         min: 6
     });
-    req.checkBody('passhash', req.__('password_max_255_chars')).isLength({
+    req.checkBody('client_id', req.__('password_max_255_chars')).isLength({
         max: 255
     });
 

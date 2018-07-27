@@ -21,7 +21,7 @@
  */
 
 let httpMethods = ['get', 'post', 'put', 'patch', 'delete'],
-    apiPrefix = '/api/v1/user';
+    apiPrefix = '/api/v1';
 
 const getNewRouteKey = function(routeKey) {
     routeKey = routeKey.toLowerCase();
@@ -56,9 +56,6 @@ let routes = {
      *  API Routers
      * ============================================================================================
      */
-
-    'post /login': 'AuthController.postLogin',
-
     'post /register': 'AuthController.postRegister'
 };
 

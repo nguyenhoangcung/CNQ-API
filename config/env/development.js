@@ -15,5 +15,7 @@ module.exports = {
 
     mongodbUri: 'mongodb://localhost:27017/cnq',
 
+    parttent_acl_first: 'whgp2018',
+
     port: process.env.PORT || 1234
 };

@@ -15,5 +15,7 @@ module.exports = {
 
     mongodbUri: 'CI_MONGODB_URL',
 
+    parttent_acl_first: 'whgp2018',
+
     port: process.env.PORT || 1234
 };

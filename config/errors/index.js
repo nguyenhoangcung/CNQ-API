@@ -1,8 +1,8 @@
 'use strict';
 
 const errors = {
-    isEmailVerified: {
-        message: 'email_not_verify',
+    typeUndefined: {
+        message: 'type_is_undefine',
         code: 1
     },
     isPhoneVerified: {
@@ -33,8 +33,8 @@ const errors = {
         message: 'email_not_exist',
         code: 8
     },
-    emailExist: {
-        message: 'email_exist',
+    usernameExist: {
+        message: 'username_exist',
         code: 9
     },
     wrongPasswordOrEmail: {

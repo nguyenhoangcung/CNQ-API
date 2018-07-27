@@ -20,10 +20,11 @@ module.exports.policies = {
     /** AuthController Police */
     AuthController: {
         postRegister: [
-            'validator/user/emailValidation',
+            'validator/user/usernameValidation',
             'validator/user/passwordValidation',
-            'validator/user/registerValidation',
-            'validator/user/uniqueEmail'
+            'validator/user/clientIdValidation',
+            'validator/user/typeValidation',
+            'validator/user/uniqueUserName'
         ]
     }
 };
