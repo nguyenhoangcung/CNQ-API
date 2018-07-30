@@ -13,7 +13,8 @@
 module.exports = {
     environment: 'development',
 
-    mongodbUri: 'mongodb://localhost:27017/cnq',
+    // mongodbUri: 'mongodb://localhost:27017/cnq',
+    mongodbUri: 'mongodb://172.16.0.244:27017/vernemqdb',
 
     parttent_acl_first: 'whgp2018',
 

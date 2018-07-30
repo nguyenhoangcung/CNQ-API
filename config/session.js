@@ -18,8 +18,8 @@ module.exports.session = {
      * of your users, forcing them to log in again.                             *
      *                                                                          *
      ***************************************************************************/
-    secret: 'f28d450d4a08f6eb7cd15ab4d97bb9cc',
-    adapter: 'redis',
+    // secret: 'f28d450d4a08f6eb7cd15ab4d97bb9cc',
+    // adapter: 'redis',
 
     // adapter: 'connect-redis',
 

@@ -6,7 +6,7 @@ module.exports = asyncWrap(async (req, res, next) => {
 
     const username = req.body.username;
 
-    const checkUserExist = await User.count({
+    const checkUserExist = await vmq_acl_auth.count({
         username
     });
 

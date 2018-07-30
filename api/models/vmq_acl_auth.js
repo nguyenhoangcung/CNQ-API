@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const mongoosePaginate = require('mongoose-paginate');
 
-const UserSchema = new mongoose.Schema(
+const vmq_acl_authSchema = new mongoose.Schema(
     {
         username: {
             type: String,
@@ -19,12 +19,12 @@ const UserSchema = new mongoose.Schema(
         client_id: { type: String }
     },
     { timestamps: true }
-);
+,{ collection: "vmq_acl_auth"});
 
-UserSchema.plugin(mongoosePaginate);
+vmq_acl_authSchema.plugin(mongoosePaginate);
 
 // Before create new User, let generate uid and hash user password
-UserSchema.pre('save', async function save(next) {
+vmq_acl_authSchema.pre('save', async function save(next) {
     try {
         const user = this;
 
@@ -39,4 +39,4 @@ UserSchema.pre('save', async function save(next) {
     }
 });
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('vmq_acl_auth', vmq_acl_authSchema, 'vmq_acl_auth');

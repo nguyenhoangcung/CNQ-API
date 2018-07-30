@@ -10,10 +10,10 @@ module.exports = {
         migrate: 'safe'
     },
 
-    redis: {
-        host: 'localhost',
-        port: 6379
-    },
+    // redis: {
+    //     host: '172.16.1.26',
+    //     port: 6379
+    // },
 
     // mongodbUri: '',
 
