@@ -15,7 +15,7 @@ module.exports = {
             client_id
         };
 
-        let user = await User.create(userData);
+        let user = await vmq_acl_auth.create(userData);
         console.log(user);
         let acl = [];
 
@@ -23,7 +23,7 @@ module.exports = {
             acl.push({
                 pattern: `${sails.config.parttent_acl_first}/${user._id}/user`
             });
-            await User.findByIdAndUpdate(
+            await vmq_acl_auth.findByIdAndUpdate(
                 { _id: user._id },
                 { publish_acl: acl, subscribe_acl: acl }
             );
@@ -32,7 +32,7 @@ module.exports = {
                 pattern: `${sails.config.parttent_acl_first}/${user._id}/driver`
             });
 
-            await User.findByIdAndUpdate(
+            await vmq_acl_auth.findByIdAndUpdate(
                 { _id: user._id },
                 { publish_acl: acl, subscribe_acl: acl }
             );
