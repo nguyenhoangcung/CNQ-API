@@ -19,7 +19,6 @@ const vmq_acl_authSchema = new mongoose.Schema(
         subscribe_acl: { type: Array },
         client_id: { type: String }
     },
-    { timestamps: true },
     { collection: 'vmq_acl_auth' }
 );
 
