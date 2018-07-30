@@ -43,7 +43,8 @@ module.exports = {
         data = [];
 
         data.push({
-            client_id
+            client_id,
+            _id: user._id
         });
 
         res.ok({ data });
