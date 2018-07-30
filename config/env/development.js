@@ -14,7 +14,7 @@ module.exports = {
     environment: 'development',
 
     // mongodbUri: 'mongodb://localhost:27017/cnq',
-    mongodbUri: 'mongodb://localhost:27017/vernemqdb',
+    mongodbUri: 'mongodb://localhost:27017/whgp2018mqtt',
 
     parttent_acl_first: 'whgp2018',
 
