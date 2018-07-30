@@ -10,7 +10,7 @@ module.exports = {
         const { username, passhash, type } = req.body;
         let { client_id } = req.body;
 
-        client_id = `${client_id}:${Date.now()}`;
+        client_id = `${client_id}${Date.now()}`;
         // create user
         let userData = {
             username,
@@ -40,7 +40,6 @@ module.exports = {
                 { publish_acl: acl, subscribe_acl: acl }
             );
         }
-
-        res.ok({});
+        res.ok(client_id);
     })
 };
