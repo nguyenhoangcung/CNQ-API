@@ -13,13 +13,15 @@ const vmq_acl_authSchema = new mongoose.Schema(
             min: 10,
             max: 255
         },
+        mountpoint: { type: String, default: '' },
         passhash: { type: String, require: true, min: 6, max: 255 },
         publish_acl: { type: Array },
         subscribe_acl: { type: Array },
         client_id: { type: String }
     },
-    { timestamps: true }
-,{ collection: "vmq_acl_auth"});
+    { timestamps: true },
+    { collection: 'vmq_acl_auth' }
+);
 
 vmq_acl_authSchema.plugin(mongoosePaginate);
 
@@ -39,4 +41,8 @@ vmq_acl_authSchema.pre('save', async function save(next) {
     }
 });
 
-module.exports = mongoose.model('vmq_acl_auth', vmq_acl_authSchema, 'vmq_acl_auth');
+module.exports = mongoose.model(
+    'vmq_acl_auth',
+    vmq_acl_authSchema,
+    'vmq_acl_auth'
+);

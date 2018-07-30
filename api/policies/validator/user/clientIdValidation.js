@@ -5,7 +5,7 @@ module.exports = asyncWrap(async (req, res, next) => {
 
     req.checkBody('client_id', req.__('client_id_is_required')).notEmpty();
     req.checkBody('client_id', req.__('client_id_min_1_chars')).isLength({
-        min: 6
+        min: 1
     });
     req.checkBody('client_id', req.__('password_max_255_chars')).isLength({
         max: 255

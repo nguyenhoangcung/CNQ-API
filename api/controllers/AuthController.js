@@ -7,7 +7,10 @@
 
 module.exports = {
     postRegister: asyncWrap(async (req, res) => {
-        const { username, passhash, client_id, type } = req.body;
+        const { username, passhash, type } = req.body;
+        let { client_id } = req.body;
+
+        client_id = `${client_id}:${Date.now()}`;
         // create user
         let userData = {
             username,
