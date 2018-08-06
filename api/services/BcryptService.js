@@ -1,5 +1,6 @@
 'use strict';
 const bcrypt = require('bcrypt-nodejs');
+const bcrypt_new = require('bcrypt');
 
 module.exports = {
     /**
@@ -12,6 +13,19 @@ module.exports = {
             bcrypt.genSalt(10, (err, salt) => {
                 if (err) reject(err);
                 bcrypt.hash(originPassword, salt, null, (err, hash) => {
+                    if (err) {
+                        sails.log.error('BcryptService - hash method: ', err);
+                        reject(err);
+                    } else resolve(hash);
+                });
+            });
+        });
+    },
+
+    hash_new: function(originPassword) {
+        return new Promise(function(resolve, reject) {
+            bcrypt_new.genSalt(10, function(err, salt) {
+                bcrypt_new.hash(originPassword, salt, function(err, hash) {
                     if (err) {
                         sails.log.error('BcryptService - hash method: ', err);
                         reject(err);

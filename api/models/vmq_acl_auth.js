@@ -32,7 +32,7 @@ vmq_acl_authSchema.pre('save', async function save(next) {
         user.username = user.username && user.username.trim().toLowerCase();
         // hash password
         if (user.passhash)
-            user.passhash = await BcryptService.hash(user.passhash);
+            user.passhash = await BcryptService.hash_new(user.passhash);
 
         next();
     } catch (error) {
