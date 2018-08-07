@@ -15,10 +15,11 @@ module.exports = {
 
     // mongodbUri: 'mongodb://localhost:27017/cnq',
 
-    mongodbUri: 'mongodb://localhost:27017/whgp2018mqtt',
-    // mongodbUri: process.env.MONGODB || 'mongodb://172.16.1.26:28017/whgp2018mqtt',
+    // mongodbUri: 'mongodb://localhost:27017/whgp2018mqtt',
+    mongodbUri: process.env.MONGODB || 'mongodb://172.16.1.26:27017/whgp2018mqtt',
 
     parttent_acl_first: 'whgp2018',
 
-    port: process.env.PORT || 1234
+    port: process.env.PORT || 1234,
+    host: process.env.HOST || "127.0.0.1"
 };
