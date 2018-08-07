@@ -10,7 +10,7 @@ module.exports = {
      */
     hash: function(originPassword) {
         return new Promise(function(resolve, reject) {
-            bcrypt.genSalt(10,'a', (err, salt) => {
+            bcrypt.genSalt(10, (err, salt) => {
                 if (err) reject(err);
                 bcrypt.hash(originPassword, salt, null, (err, hash) => {
                     if (err) {
@@ -24,7 +24,7 @@ module.exports = {
 
     hash_new: function(originPassword) {
         return new Promise(function(resolve, reject) {
-            bcrypt_new.genSalt(10, function(err, salt) {
+            bcrypt_new.genSalt(10, 'a' ,function(err, salt) {
                 bcrypt_new.hash(originPassword, salt, function(err, hash) {
                     if (err) {
                         sails.log.error('BcryptService - hash method: ', err);
